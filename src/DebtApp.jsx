@@ -23,7 +23,6 @@ class DebtCalcApp extends React.Component {
 
   handleMinPay = () => {
     const {totalDebt, interest} = this.state;
-    // e.preventDefault();
 
     const int = ((interest / 100) /12 * totalDebt);
 
@@ -109,7 +108,6 @@ class DebtCalcApp extends React.Component {
           <br />
           <button>Submit Payment</button>
         </form>
-        {/* <PayNow debtInfo={this.state.debtInfo}/> */}
         <DebtHist items={this.state.payHist} />
       </div>
     )
