@@ -2,17 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -24,15 +13,25 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+hr {
+  width: 90%;
+  height: 2px;
+  background-color: white;
+  border: 1px solid antiquewhite;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.debt-hist {
+  list-style: none;
+  background-color: antiquewhite;
+  color: #282c34;
+  font-size: 18px;
+  padding: 10px;
+  text-align: left;
+}
+
+.debt-hist li {
+  padding: 8px 0;
+  margin-bottom: 1.75px;
+  border-bottom: 1px dashed #282c34;
+  border-top: 1px solid #282c34;
 }
