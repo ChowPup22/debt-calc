@@ -137,13 +137,6 @@ class DebtCalcApp extends React.Component {
           <br />
           <br />
           <div>
-            <label htmlFor="remDebt">Debt Remaining:</label>
-            <br />
-            <input 
-              type="number"
-              value={this.state.totalDebt}
-              readOnly={true}
-            />
             <h5>Estimated Minimum Payments: {this.state.numPayments}</h5>
             <h4>Min Payment: ${this.state.minPay}</h4>
           </div>
