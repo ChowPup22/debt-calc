@@ -55,10 +55,6 @@ class DebtCalcApp extends React.Component {
 
       this.setState({minPay: min, debtInfo: newInfo, numPayments: num});
     }
-
-    
-    // this.setState({numPayments: num.toFixed(0)});
-    
   };
 
   handleSubmit = (e) => {
