@@ -41,7 +41,7 @@ class DebtCalcApp extends React.Component {
         totalDebt: totalDebt,
       }
 
-      this.setState({minPay: min, debtInfo: newInfo, numPayments: num});
+      return this.handleState(min, newInfo, num);
 
     } else if (totalDebt <= 100) {
       const min = ((totalDebt * 0.01) + totalDebt).toFixed(2);
@@ -53,9 +53,13 @@ class DebtCalcApp extends React.Component {
         totalDebt: totalDebt,
       }
 
-      this.setState({minPay: min, debtInfo: newInfo, numPayments: num});
+      return this.handleState(min, newInfo, num);
     }
   };
+
+  handleState = (min, info, num) => {
+    this.setState({minPay: min, debtInfo: info, numPayments: num});
+  }
 
   handleSubmit = (e) => {
     const {debtInfo, payNow, minPay, interest} = this.state;
@@ -99,13 +103,12 @@ class DebtCalcApp extends React.Component {
         date: '',
         id: '',
         read: true,
-      }));
+      }), this.handleMinPay(interest));
       
     } else if (payNow < minPay) {
       this.setState({payNow: 0})
       alert(`Payment must be greater than or equal to the Minimum Payment! ($${minPay})`);
     }
-    this.handleMinPay(interest);
   }
 
   render() {
