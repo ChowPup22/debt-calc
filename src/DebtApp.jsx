@@ -68,7 +68,6 @@ class DebtCalcApp extends React.Component {
     if (payNow >= minPay) {
 
       const principle = (payNow - debtInfo.intNow);
-
       const rem = (debtInfo.totalDebt - principle).toFixed(2);
       
       const timeStamp = () => {
@@ -112,8 +111,6 @@ class DebtCalcApp extends React.Component {
   }
 
   render() {
-
-
     return (
       <div>
         <h2>Debt Calculator</h2>
