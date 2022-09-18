@@ -20,37 +20,37 @@ class DebtCalcApp extends React.Component {
   }
 
   handleDebt = ({target: { value }}) => this.setState({totalDebt: value});
-  handleInt = ({target: { value }}) => this.setState({interest: value}, this.handleMinPay(value));
+  handleInt = ({target: { value }}) => this.setState({interest: value}, this.handleMinPay(this.state.totalDebt, value));
   handlePayNow = ({target: {value}}) => this.setState({ payNow: value});
 
-  handleMinPay = (value) => {
+  handleMinPay = (rem, value) => {
 
-    const {totalDebt} = this.state;
+    // const {totalDebt} = this.state;
 
-    if (totalDebt > 100) {
+    if (rem > 100) {
       const rate = value /100;
 
-      const int = (rate * totalDebt)/12;
+      const int = (rate * rem)/12;
 
-      const min = ((totalDebt * 0.01) + int).toFixed(2);
+      const min = ((rem * 0.01) + int).toFixed(2);
 
-      const num = (totalDebt /min).toFixed(0);
+      const num = (rem /min).toFixed(0);
     
       const newInfo = {
         intNow: int.toFixed(2),
-        totalDebt: totalDebt,
+        totalDebt: rem,
       }
 
       return this.handleState(min, newInfo, num);
 
-    } else if (totalDebt <= 100) {
-      const min = ((totalDebt * 0.01) + totalDebt).toFixed(2);
+    } else if (rem <= 100) {
+      const min = ((rem * 0.01) + rem).toFixed(2);
 
-      const num = (totalDebt /min).toFixed(0);
+      const num = (rem /min).toFixed(0);
 
       const newInfo = {
         intNow: 0,
-        totalDebt: totalDebt,
+        totalDebt: rem,
       }
 
       return this.handleState(min, newInfo, num);
@@ -102,7 +102,7 @@ class DebtCalcApp extends React.Component {
         date: '',
         id: '',
         read: true,
-      }), this.handleMinPay(interest));
+      }), this.handleMinPay(rem, interest));
       
     } else if (payNow < minPay) {
       this.setState({payNow: 0})
