@@ -1,5 +1,4 @@
 import React from "react";
-import DebtHist from "./DebtHist";
 
 class PayNow extends React.Component {
   constructor(props) {
@@ -9,11 +8,6 @@ class PayNow extends React.Component {
       
     }
   }
-
-  
-
-  
-
   render() {
     return (
       <div>
@@ -24,10 +18,9 @@ class PayNow extends React.Component {
           <br />
           <button>Submit Payment</button>
         </form>
-       
       </div>
     )
   }
-}
+};
 
 export default PayNow;

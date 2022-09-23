@@ -1,10 +1,6 @@
 import React from "react";
 
-class DebtHist extends React.Component { 
-
-  render() {
-    const {items} = this.props;
-    return (
+const DebtHist = ({items}) => (
       <div>
         <h3>Transaction History</h3>
         <hr />
@@ -14,8 +10,5 @@ class DebtHist extends React.Component {
         ))}
       </ul>
       </div>
-    )
-  }
-}
-
+)
 export default DebtHist;
